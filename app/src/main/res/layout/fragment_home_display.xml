@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+   <!-- Top bar with user icon, search and cart icon -->
+   <RelativeLayout
+       android:id="@+id/top_bar"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@color/white">
+
+      <ImageView
+          android:id="@+id/per"
+          android:layout_width="70dp"
+          android:layout_height="40dp"
+          android:src="@drawable/person"
+          android:layout_alignParentLeft="true"
+          android:layout_centerVertical="true"
+          android:padding="5dp"/>
+
+      <EditText
+          android:id="@+id/search_bar"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@id/per"
+          android:layout_toLeftOf="@id/cart_icon"
+          android:layout_centerVertical="true"
+          android:layout_marginRight="5dp"
+          android:hint="Search products"
+          android:backgroundTint="@color/lighgreen"
+          android:padding="10dp"/>
+
+      <ImageView
+          android:id="@+id/cart_icon"
+          android:layout_width="70dp"
+          android:layout_height="40dp"
+          android:src="@drawable/cart"
+          android:layout_alignParentRight="true"
+          android:layout_centerVertical="true"
+          android:padding="5dp"/>
+
+   </RelativeLayout>
+
+   <!-- Horizontal scroll view for categories -->
+   <HorizontalScrollView
+       android:id="@+id/category_scroll"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:scrollbars="none"
+       android:padding="10dp"
+       android:background="@color/white">
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:orientation="horizontal">
+
+         <Button
+             android:id="@+id/category_gadgets"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Gadgets"
+             android:textSize="14sp"
+             android:backgroundTint="@color/green"/>
+
+         <Button
+             android:id="@+id/category_phones"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Phones"
+             android:textSize="14sp"
+             android:backgroundTint="@color/green"/>
+
+         <Button
+             android:id="@+id/category_computers"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Computers"
+             android:textSize="14sp"
+             android:backgroundTint="@color/green"/>
+
+         <Button
+             android:id="@+id/category_fashion"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Fashion"
+             android:textSize="14sp"
+             android:backgroundTint="@color/green"/>
+
+         <Button
+             android:id="@+id/category_shoes"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Shoes"
+             android:textSize="14sp"
+             android:backgroundTint="@color/green"/>
+
+      </LinearLayout>
+
+   </HorizontalScrollView>
+
+   <!-- Product grid view -->
+
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
+
+</LinearLayout>
