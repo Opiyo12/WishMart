@@ -1,5 +1,6 @@
 package com.example.wishmart;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.view.WindowManager;
 
 public class Splash extends AppCompatActivity {
     Handler handler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -17,11 +19,13 @@ public class Splash extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         handler=new Handler();
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i= new Intent(Splash.this, firebaseProductSubmission.class);
+                Intent i= new Intent(Splash.this, Login.class);
                 startActivity(i);
+                finish();
 
             }
         }, 5000);

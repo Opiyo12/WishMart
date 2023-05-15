@@ -36,6 +36,7 @@
 
             >
             <LinearLayout
+                android:id="@+id/home"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -75,6 +76,7 @@
             android:layout_margin="12dp"
             >
             <LinearLayout
+                android:id="@+id/upload"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"

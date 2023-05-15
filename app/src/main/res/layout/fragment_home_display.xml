@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-       android:orientation="vertical"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#f8f8f8"
+    android:layout_height="match_parent">
 
    <!-- Top bar with user icon, search and cart icon -->
    <RelativeLayout
@@ -12,34 +15,24 @@
        android:background="@color/white">
 
       <ImageView
-          android:id="@+id/per"
-          android:layout_width="70dp"
-          android:layout_height="40dp"
-          android:src="@drawable/person"
-          android:layout_alignParentLeft="true"
-          android:layout_centerVertical="true"
-          android:padding="5dp"/>
-
-      <EditText
-          android:id="@+id/search_bar"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_toRightOf="@id/per"
-          android:layout_toLeftOf="@id/cart_icon"
-          android:layout_centerVertical="true"
-          android:layout_marginRight="5dp"
-          android:hint="Search products"
-          android:backgroundTint="@color/lighgreen"
-          android:padding="10dp"/>
-
-      <ImageView
           android:id="@+id/cart_icon"
           android:layout_width="70dp"
           android:layout_height="40dp"
           android:src="@drawable/cart"
           android:layout_alignParentRight="true"
           android:layout_centerVertical="true"
-          android:padding="5dp"/>
+          android:padding="5dp" />
+
+      <EditText
+          android:id="@+id/search_bar"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_toLeftOf="@id/cart_icon"
+          android:layout_marginRight="5dp"
+          android:layout_centerVertical="true"
+          android:hint="Search products"
+          android:backgroundTint="@color/lighgreen"
+          android:padding="10dp" />
 
    </RelativeLayout>
 
@@ -49,12 +42,12 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:scrollbars="none"
-       android:padding="10dp"
-       android:background="@color/white">
+       android:background="@color/white"
+       android:padding="10dp">
 
       <LinearLayout
           android:layout_width="wrap_content"
-          android:layout_height="match_parent"
+          android:layout_height="wrap_content"
           android:orientation="horizontal">
 
          <Button
@@ -62,50 +55,57 @@
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:text="Gadgets"
+             android:layout_margin="4dp"
              android:textSize="14sp"
-             android:backgroundTint="@color/green"/>
+             android:backgroundTint="@color/green" />
 
          <Button
              android:id="@+id/category_phones"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:text="Phones"
+             android:layout_margin="4dp"
              android:textSize="14sp"
-             android:backgroundTint="@color/green"/>
+             android:backgroundTint="@color/green" />
 
          <Button
              android:id="@+id/category_computers"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:text="Computers"
+             android:layout_margin="4dp"
              android:textSize="14sp"
-             android:backgroundTint="@color/green"/>
+             android:backgroundTint="@color/green" />
 
          <Button
              android:id="@+id/category_fashion"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:text="Fashion"
+             android:layout_margin="4dp"
              android:textSize="14sp"
-             android:backgroundTint="@color/green"/>
+             android:backgroundTint="@color/green" />
 
          <Button
              android:id="@+id/category_shoes"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:text="Shoes"
+             android:layout_margin="4dp"
              android:textSize="14sp"
-             android:backgroundTint="@color/green"/>
+             android:backgroundTint="@color/green" />
 
       </LinearLayout>
 
    </HorizontalScrollView>
 
-   <!-- Product grid view -->
-
-
+   
    <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/recyclerview"
        android:layout_width="match_parent"
-       android:layout_height="match_parent"/>
+       android:layout_height="match_parent"
+       android:padding="8dp" />
+
+
 
 </LinearLayout>

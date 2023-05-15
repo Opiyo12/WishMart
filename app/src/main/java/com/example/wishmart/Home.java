@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class Home extends AppCompatActivity {
+   // public static final int homeDisplayFragment = 1;
    BottomNavigationView bottomNavigationView;
    homeDisplayFragment home= new homeDisplayFragment();
    CategoryFragment categoryFragment= new CategoryFragment();
@@ -22,8 +23,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        getSupportActionBar().hide();
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         bottomNavigationView= findViewById(R.id.bottomNavBar);
         //Code for displaying the home fragment first
         getSupportFragmentManager().beginTransaction().replace(R.id.container, home).commit();
@@ -31,6 +31,15 @@ public class Home extends AppCompatActivity {
         badgeDrawable.setVisible(true);
         badgeDrawable.setNumber(0);
 
+        // Get the flag indicating which fragment to display for loading the product from admin panel
+        String fragmentToLoad = getIntent().getStringExtra("FRAGMENT_TO_LOAD");
+
+        // Load the appropriate fragment based on the flag
+        if (fragmentToLoad != null && fragmentToLoad.equals("HOME_PRODUCT_FRAGMENT")) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, new homeDisplayFragment()).commit();
+        } else {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, home).commit();
+        }
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected( MenuItem item) {

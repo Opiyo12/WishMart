@@ -11,4 +11,7 @@
     <color name="lighgreen">#00bf63</color>
     <color name="darkgray">#7A7676</color>
     <color name="lightblue">#3066be</color>
+    <color name="light_green">#E1FFC9</color>
+    <color name="red">#F11F1F</color>
+
 </resources>
